@@ -1,9 +1,16 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import AnimatedText from "./AnimatedText";
+import TypewriterEffect from "./TypewriterEffect";
 
 export default function HeroSection() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
+
+  const roles = [
+    "I am a CS Student",
+    "I am a Full Stack Developer",
+    "I am a Software Engineer"
+  ];
 
   return (
     <section className="min-h-screen relative overflow-hidden">
@@ -27,9 +34,9 @@ export default function HeroSection() {
               text="Hello, I'm John Doe"
               className="text-4xl md:text-6xl font-bold mb-4"
             />
-            <AnimatedText
-              text="Full Stack Developer"
-              className="text-2xl md:text-3xl text-muted-foreground mb-8"
+            <TypewriterEffect
+              phrases={roles}
+              className="text-2xl md:text-3xl text-muted-foreground mb-8 block"
             />
           </motion.div>
 
