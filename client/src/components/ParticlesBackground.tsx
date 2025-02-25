@@ -22,13 +22,13 @@ export default function ParticlesBackground() {
         fpsLimit: 60,
         particles: {
           color: {
-            value: "#000000",
+            value: "#7877C6",
           },
           links: {
-            color: "#000000",
+            color: "#7877C6",
             distance: 150,
             enable: true,
-            opacity: 0.3,
+            opacity: 0.2,
             width: 1,
           },
           move: {
@@ -46,7 +46,7 @@ export default function ParticlesBackground() {
               enable: true,
               area: 800,
             },
-            value: 60,
+            value: 80,
           },
           opacity: {
             value: 0.4,
