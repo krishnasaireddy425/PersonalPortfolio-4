@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import AnimatedText from "./AnimatedText";
 import TypewriterEffect from "./TypewriterEffect";
-import ParticlesBackground from "./ParticlesBackground";
 
 export default function HeroSection() {
   const { scrollY } = useScroll();
@@ -15,10 +14,7 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen relative overflow-hidden">
-      {/* Particle Background */}
-      <ParticlesBackground />
-
-      {/* Gradient Overlay */}
+      {/* Parallax Background */}
       <motion.div 
         style={{ y }}
         className="absolute inset-0 -z-10"
