@@ -2,22 +2,68 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+const skillCards = [
+  {
+    title: "Frontend",
+    skills: "React, TypeScript, Tailwind",
+  },
+  {
+    title: "Backend",
+    skills: "Node.js, Express, PostgreSQL",
+  },
+  {
+    title: "Tools",
+    skills: "Git, Docker, AWS",
+  },
+  {
+    title: "Design",
+    skills: "Figma, Adobe XD",
+  },
+];
+
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <section id="about" className="py-20">
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.6 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
         className="container mx-auto"
       >
-        <h2 className="text-3xl font-bold mb-8">About Me</h2>
+        <motion.h2 
+          variants={itemVariants}
+          className="text-3xl font-bold mb-8"
+        >
+          About Me
+        </motion.h2>
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <motion.div variants={itemVariants}>
             <p className="text-lg text-muted-foreground mb-4">
               I'm a passionate full-stack developer with expertise in modern web technologies.
               With a focus on creating elegant and efficient solutions, I bring ideas to life
@@ -28,24 +74,20 @@ export default function AboutSection() {
               including React, Node.js, and cloud platforms. I'm always excited to take on
               new challenges and create meaningful applications.
             </p>
-          </div>
+          </motion.div>
+
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-muted p-4 rounded-lg">
-              <h3 className="font-bold mb-2">Frontend</h3>
-              <p className="text-muted-foreground">React, TypeScript, Tailwind</p>
-            </div>
-            <div className="bg-muted p-4 rounded-lg">
-              <h3 className="font-bold mb-2">Backend</h3>
-              <p className="text-muted-foreground">Node.js, Express, PostgreSQL</p>
-            </div>
-            <div className="bg-muted p-4 rounded-lg">
-              <h3 className="font-bold mb-2">Tools</h3>
-              <p className="text-muted-foreground">Git, Docker, AWS</p>
-            </div>
-            <div className="bg-muted p-4 rounded-lg">
-              <h3 className="font-bold mb-2">Design</h3>
-              <p className="text-muted-foreground">Figma, Adobe XD</p>
-            </div>
+            {skillCards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="bg-muted p-4 rounded-lg transform transition-all duration-200 hover:shadow-lg"
+              >
+                <h3 className="font-bold mb-2">{card.title}</h3>
+                <p className="text-muted-foreground">{card.skills}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>

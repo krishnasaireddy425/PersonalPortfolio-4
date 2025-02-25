@@ -1,44 +1,62 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import AnimatedText from "./AnimatedText";
 
 export default function HeroSection() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16">
-      <div className="text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <AnimatedText
-            text="Hello, I'm John Doe"
-            className="text-4xl md:text-6xl font-bold mb-4"
-          />
-          <AnimatedText
-            text="Full Stack Developer"
-            className="text-2xl md:text-3xl text-muted-foreground mb-8"
-          />
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="flex justify-center gap-4"
-        >
-          <a
-            href="#projects"
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-md hover:opacity-90 transition-opacity"
+    <section className="min-h-screen relative overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div 
+        style={{ y }}
+        className="absolute inset-0 -z-10"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+      </motion.div>
+
+      <div className="min-h-screen flex items-center justify-center relative">
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            View My Work
-          </a>
-          <a
-            href="#contact"
-            className="border border-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors"
+            <AnimatedText
+              text="Hello, I'm John Doe"
+              className="text-4xl md:text-6xl font-bold mb-4"
+            />
+            <AnimatedText
+              text="Full Stack Developer"
+              className="text-2xl md:text-3xl text-muted-foreground mb-8"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="flex justify-center gap-4"
           >
-            Contact Me
-          </a>
-        </motion.div>
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-md transition-colors"
+            >
+              View My Work
+            </motion.a>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors"
+            >
+              Contact Me
+            </motion.a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
