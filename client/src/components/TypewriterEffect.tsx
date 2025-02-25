@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 
 interface TypewriterEffectProps {
   phrases: string[];
@@ -7,56 +7,34 @@ interface TypewriterEffectProps {
 }
 
 export default function TypewriterEffect({ phrases, className = "" }: TypewriterEffectProps) {
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const el = useRef(null);
+  const typed = useRef<Typed | null>(null);
 
   useEffect(() => {
-    const typingSpeed = 50; // Faster typing
-    const deletingSpeed = 30; // Faster deleting
-    const pauseDuration = 1000; // Shorter pause between phrases
-
-    const typeText = () => {
-      const currentPhrase = phrases[currentPhraseIndex];
-
-      if (!isDeleting) {
-        if (currentText.length < currentPhrase.length) {
-          setCurrentText(currentPhrase.slice(0, currentText.length + 1));
-          setTimeout(typeText, typingSpeed);
-        } else {
-          setTimeout(() => setIsDeleting(true), pauseDuration);
-        }
-      } else {
-        if (currentText.length > 0) {
-          setCurrentText(currentText.slice(0, currentText.length - 1));
-          setTimeout(typeText, deletingSpeed);
-        } else {
-          setIsDeleting(false);
-          setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
-        }
-      }
+    const options = {
+      strings: phrases,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 1500,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
     };
 
-    const timer = setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentPhraseIndex, phrases]);
+    if (el.current) {
+      typed.current = new Typed(el.current, options);
+    }
+
+    return () => {
+      if (typed.current) {
+        typed.current.destroy();
+      }
+    };
+  }, [phrases]);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={currentText}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className={className}
-      >
-        {currentText}
-        <motion.span
-          animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-          className="inline-block w-[2px] h-[1em] bg-current ml-1 align-middle"
-        />
-      </motion.span>
-    </AnimatePresence>
+    <span className={className}>
+      <span ref={el} />
+    </span>
   );
 }
