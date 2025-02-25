@@ -12,9 +12,9 @@ export default function TypewriterEffect({ phrases, className = "" }: Typewriter
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const pauseDuration = 2000;
+    const typingSpeed = 50; // Faster typing
+    const deletingSpeed = 30; // Faster deleting
+    const pauseDuration = 1000; // Shorter pause between phrases
 
     const typeText = () => {
       const currentPhrase = phrases[currentPhraseIndex];
