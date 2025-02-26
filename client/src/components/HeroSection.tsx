@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import AnimatedText from "./AnimatedText";
+import BaffleText from "./BaffleText";
 import TypewriterEffect from "./TypewriterEffect";
 
 export default function HeroSection() {
@@ -30,8 +30,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <AnimatedText
-              text="Hello, I'm John Doe"
+            <BaffleText
+              text="Hi, I'm Krishna Sai Reddy"
+              revealDelay={500}
+              scrambleSpeed={100}
               className="text-4xl md:text-6xl font-bold mb-4"
             />
             <TypewriterEffect

@@ -47,20 +47,26 @@ export default function ParticlesBackground() {
         }
       },
       interactivity: {
-        detect_on: "canvas",
+        detect_on: "window",
         events: {
           onhover: {
             enable: true,
-            mode: "repulse"
+            mode: "repulse",
+            parallax: {
+              enable: true,
+              force: 60,
+              smooth: 10
+            }
           },
           onclick: {
             enable: true,
             mode: "push"
-          }
+          },
+          resize: true
         },
         modes: {
           repulse: {
-            distance: 100,
+            distance: 150,
             duration: 0.4
           },
           push: {
@@ -78,7 +84,7 @@ export default function ParticlesBackground() {
       className="fixed inset-0 -z-10"
       style={{ 
         background: 'transparent',
-        pointerEvents: 'none' 
+        pointerEvents: 'none'
       }}
     />
   );

@@ -30,7 +30,7 @@ export default function ContactSection() {
                 <Input
                   id="name"
                   placeholder="Your name"
-                  className="w-full"
+                  className="w-full border-gray-400"
                 />
               </div>
               <div>
@@ -41,7 +41,7 @@ export default function ContactSection() {
                   id="email"
                   type="email"
                   placeholder="your@email.com"
-                  className="w-full"
+                  className="w-full border-gray-400"
                 />
               </div>
               <div>
@@ -51,7 +51,7 @@ export default function ContactSection() {
                 <Textarea
                   id="message"
                   placeholder="Your message"
-                  className="w-full min-h-[150px]"
+                  className="w-full min-h-[150px] border-gray-400"
                 />
               </div>
               <Button type="submit" className="w-full">
