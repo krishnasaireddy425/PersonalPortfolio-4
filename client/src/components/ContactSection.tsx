@@ -20,46 +20,50 @@ export default function ContactSection() {
         className="container mx-auto max-w-2xl"
       >
         <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-        <Card>
-          <CardContent className="p-6">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block mb-2">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  placeholder="Your name"
-                  className="w-full border-gray-400"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block mb-2">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  className="w-full border-gray-400"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder="Your message"
-                  className="w-full min-h-[150px] border-gray-400"
-                />
-              </div>
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+        <div className="relative">
+          {/* Opaque layer to block particles */}
+          <div className="absolute inset-0 bg-background" />
+          <Card className="relative">
+            <CardContent className="p-6">
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block mb-2">
+                    Name
+                  </label>
+                  <Input
+                    id="name"
+                    placeholder="Your name"
+                    className="w-full border-gray-400"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block mb-2">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    className="w-full border-gray-400"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block mb-2">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    placeholder="Your message"
+                    className="w-full min-h-[150px] border-gray-400"
+                  />
+                </div>
+                <Button type="submit" className="w-full">
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
       </motion.div>
     </section>
   );
