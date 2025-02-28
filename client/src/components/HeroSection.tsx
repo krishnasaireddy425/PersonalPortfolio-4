@@ -15,13 +15,6 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen relative overflow-hidden">
       {/* Parallax Background */}
-      <motion.div 
-        style={{ y }}
-        className="absolute inset-0 -z-10"
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
-      </motion.div>
 
       <div className="min-h-screen flex items-center justify-center relative">
         <div className="text-center">

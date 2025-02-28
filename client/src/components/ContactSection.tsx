@@ -21,10 +21,11 @@ export default function ContactSection() {
       >
         <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
         <div className="relative">
-          {/* Opaque layer to block particles */}
-          <div className="absolute inset-0 bg-background" />
-          <Card className="relative">
-            <CardContent className="p-6">
+          {/* Moved opaque background inside the Card */}
+          <Card className="relative rounded-lg overflow-hidden">
+            {/* Opaque layer now inside so it's clipped to the rounded borders */}
+            <div className="absolute inset-0 bg-background" />
+            <CardContent className="p-6 relative">
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block mb-2">

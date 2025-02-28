@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+interface NavbarProps {
+  isNight: boolean;
+  toggleDayNight: () => void;
+}
+
+export default function Navbar({ isNight, toggleDayNight }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,7 +30,14 @@ export default function Navbar() {
         <Link href="/">
           <a className="text-xl font-bold">Portfolio</a>
         </Link>
-        <div className="flex gap-8">
+        <div className="flex gap-8 items-center">
+          <button
+            onClick={toggleDayNight}
+            className="text-xl focus:outline-none"
+            aria-label="Toggle Day/Night Mode"
+          >
+            {isNight ? "☀️" : "🌙"}
+          </button>
           <a href="#about" className="hover:text-primary transition-colors">
             About
           </a>
