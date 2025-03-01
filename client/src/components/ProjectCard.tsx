@@ -35,18 +35,18 @@ export default function ProjectCard({
       >
         {/* Front of card */}
         <div className="absolute w-full h-full backface-hidden">
-          <Card className="h-full overflow-hidden">
+          <Card className="h-full overflow-hidden dark:bg-[#F8F8F5]">
             <CardHeader className="p-0">
               <img src={image} alt={title} className="w-full h-48 object-cover" />
             </CardHeader>
             <CardContent className="p-6">
-              <CardTitle className="mb-2">{title}</CardTitle>
-              <p className="text-muted-foreground mb-4">{description}</p>
+              <CardTitle className="mb-2 dark:text-black">{title}</CardTitle>
+              <p className="text-muted-foreground mb-4 dark:text-black">{description}</p>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-primary/10 text-primary-foreground px-2 py-1 rounded text-sm"
+                    className="bg-primary/10 text-primary-foreground dark:text-black px-2 py-1 rounded text-sm"
                   >
                     {tech}
                   </span>
@@ -60,7 +60,7 @@ export default function ProjectCard({
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
           {/* Opaque layer to block particles */}
           <div className="absolute inset-0 bg-background" />
-          <Card className="relative h-full overflow-hidden bg-primary/5">
+          <Card className="relative h-full overflow-hidden bg-primary/5 dark:bg-[#F8F8F5]">
             <CardContent className="p-6 flex flex-col justify-between h-full">
               <div>
                 <CardTitle className="mb-4">{title}</CardTitle>
@@ -70,7 +70,7 @@ export default function ProjectCard({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary text-primary-foreground px-4 py-2 rounded text-center mt-4 hover:bg-primary/90 transition-colors"
+                className="bg-primary text-primary-foreground px-4 py-2 rounded text-center mt-4 hover:bg-primary/90 transition-colors dark:bg-amber-400 dark:text-black dark:hover:bg-amber-500"
                 onClick={(e) => e.stopPropagation()}
               >
                 View Project

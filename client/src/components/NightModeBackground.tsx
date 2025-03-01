@@ -111,7 +111,6 @@ export default function NightModeBackground() {
         <ParallaxLayer
           offset={0}
           speed={0}
-          onClick={() => parallax.current.scrollTo(1)}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -124,7 +123,6 @@ export default function NightModeBackground() {
         <ParallaxLayer
           offset={1}
           speed={0}
-          onClick={() => parallax.current.scrollTo(2)}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -137,7 +135,6 @@ export default function NightModeBackground() {
         <ParallaxLayer
           offset={2}
           speed={0}
-          onClick={() => parallax.current.scrollTo(3)}
           style={{
             overflow: 'visible',
           }}
@@ -150,7 +147,6 @@ export default function NightModeBackground() {
         <ParallaxLayer
           offset={3}
           speed={0}
-          onClick={() => parallax.current.scrollTo(0)}
           style={{
             overflow: 'visible',
           }}

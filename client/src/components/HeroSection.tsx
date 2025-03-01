@@ -15,7 +15,6 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen relative overflow-hidden">
       {/* Parallax Background */}
-
       <div className="min-h-screen flex items-center justify-center relative">
         <div className="text-center">
           <motion.div
@@ -27,14 +26,13 @@ export default function HeroSection() {
               text="Hi, I'm Krishna Sai Reddy"
               revealDelay={500}
               scrambleSpeed={100}
-              className="text-4xl md:text-6xl font-bold mb-4"
+              className="text-4xl md:text-6xl font-bold mb-4 dark:text-white dark:drop-shadow-lg"
             />
             <TypewriterEffect
               phrases={roles}
-              className="text-2xl md:text-3xl text-muted-foreground mb-8 block"
+              className="text-2xl md:text-3xl text-muted-foreground mb-8 block dark:text-white dark:drop-shadow-md"
             />
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -45,7 +43,8 @@ export default function HeroSection() {
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary text-primary-foreground px-6 py-3 rounded-md transition-colors"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-md transition-colors 
+                         dark:bg-gradient-to-r dark:from-amber-400 dark:to-amber-500 dark:text-black dark:shadow-md"
             >
               View My Work
             </motion.a>
@@ -53,7 +52,8 @@ export default function HeroSection() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="border border-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors"
+              className="border border-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors 
+                         dark:border-white dark:text-white dark:hover:bg-white/20"
             >
               Contact Me
             </motion.a>

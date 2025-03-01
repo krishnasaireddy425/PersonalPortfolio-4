@@ -14,16 +14,18 @@ function App() {
   const toggleDayNight = () => setIsNight(prev => !prev);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* Conditional base path */}
-      <Router base={base}>
-        <Switch>
-          <Route path="/" component={() => <Home isNight={isNight} toggleDayNight={toggleDayNight} />} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-      <Toaster />
-    </QueryClientProvider>
+    <div className={isNight ? "dark" : ""}>
+      <QueryClientProvider client={queryClient}>
+        {/* Conditional base path */}
+        <Router base={base}>
+          <Switch>
+            <Route path="/" component={() => <Home isNight={isNight} toggleDayNight={toggleDayNight} />} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+        <Toaster />
+      </QueryClientProvider>
+    </div>
   );
 }
 

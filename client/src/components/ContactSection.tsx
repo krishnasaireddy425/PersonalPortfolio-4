@@ -22,40 +22,40 @@ export default function ContactSection() {
         <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
         <div className="relative">
           {/* Moved opaque background inside the Card */}
-          <Card className="relative rounded-lg overflow-hidden">
-            {/* Opaque layer now inside so it's clipped to the rounded borders */}
-            <div className="absolute inset-0 bg-background" />
-            <CardContent className="p-6 relative">
+          <Card className="relative rounded-lg overflow-hidden bg-primary/5 dark:bg-white">
+            {/* Opaque layer only in light mode */}
+            <div className="absolute inset-0 bg-background dark:hidden" />
+            <CardContent className="p-6 relative dark:text-black">
               <form className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block mb-2">
+                  <label htmlFor="name" className="block mb-2 dark:text-black">
                     Name
                   </label>
                   <Input
                     id="name"
                     placeholder="Your name"
-                    className="w-full border-gray-400"
+                    className="w-full border-gray-400 dark:bg-white dark:text-black dark:border-gray-300"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block mb-2">
+                  <label htmlFor="email" className="block mb-2 dark:text-black">
                     Email
                   </label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="your@email.com"
-                    className="w-full border-gray-400"
+                    className="w-full border-gray-400 dark:bg-white dark:text-black dark:border-gray-300"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block mb-2">
+                  <label htmlFor="message" className="block mb-2 dark:text-black">
                     Message
                   </label>
                   <Textarea
                     id="message"
                     placeholder="Your message"
-                    className="w-full min-h-[150px] border-gray-400"
+                    className="w-full min-h-[150px] border-gray-400 dark:bg-white dark:text-black dark:border-gray-300"
                   />
                 </div>
                 <Button type="submit" className="w-full">
