@@ -17,7 +17,7 @@ export default function Home({ isNight, toggleDayNight }: HomeProps) {
       {/* Background wrapper positioned absolutely to cover the entire Home */}
       {isNight ? (
         <div className="absolute inset-0 z-0">
-          <NightModeBackground />
+          <NightModeBackground toggleDayNight={toggleDayNight} />
         </div>
       ) : (
         <div className="absolute inset-0 z-0">
@@ -27,11 +27,13 @@ export default function Home({ isNight, toggleDayNight }: HomeProps) {
 
       {/* Main content placed above the background */}
       <div className="relative z-10">
-        <Navbar isNight={isNight} toggleDayNight={toggleDayNight} />
+        {/* Only show navbar in day mode, as night mode now has its own navbar */}
+        {!isNight && <Navbar isNight={isNight} toggleDayNight={toggleDayNight} />}
+        
         {/* Only render main sections in Day Mode; Night Mode will show only the animated background */}
         {!isNight && (
           <main className="container mx-auto px-4 relative">
-            <HeroSection />
+            <HeroSection isNight={isNight} />
             <AboutSection />
             <ProjectsSection />
             <ContactSection />

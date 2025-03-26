@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
-import { Link } from "wouter";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import DayNightSwitch from './DayNightSwitch';
 
 interface NavbarProps {
   isNight: boolean;
   toggleDayNight: () => void;
+  scrollToSection?: (index: number) => void;
 }
 
-export default function Navbar({ isNight, toggleDayNight }: NavbarProps) {
+export default function Navbar({ isNight, toggleDayNight, scrollToSection }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,33 +20,57 @@ export default function Navbar({ isNight, toggleDayNight }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionIndex: number) => {
+    if (isNight && scrollToSection) {
+      e.preventDefault();
+      scrollToSection(sectionIndex);
+    }
+  };
+
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -20 }}
+      initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md py-2" : "py-4"
+        isNight
+        ? scrolled 
+         ? "bg-background/5 backdrop-blur-md py-2" 
+         : "bg-background/5 backdrop-blur-md py-2"
+        : scrolled 
+          ? "bg-background/10 backdrop-blur-md py-2" 
+          : "py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/">
-          <a className="text-xl font-bold">Portfolio</a>
-        </Link>
+        <div className="w-12"></div>
         <div className="flex gap-8 items-center">
-          <button
-            onClick={toggleDayNight}
-            className="text-xl focus:outline-none"
-            aria-label="Toggle Day/Night Mode"
+          <DayNightSwitch isNight={isNight} toggleDayNight={toggleDayNight} />
+          <a 
+            href="#" 
+            className="text-lg hover:text-primary transition-colors dark:text-white"
+            onClick={(e) => handleNavClick(e, 0)}
           >
-            {isNight ? "☀️" : "🌙"}
-          </button>
-          <a href="#about" className="hover:text-primary transition-colors">
+            Home
+          </a>
+          <a 
+            href="#about" 
+            className="text-lg hover:text-primary transition-colors dark:text-white"
+            onClick={(e) => handleNavClick(e, 1)}
+          >
             About
           </a>
-          <a href="#projects" className="hover:text-primary transition-colors">
+          <a 
+            href="#projects" 
+            className="text-lg hover:text-primary transition-colors dark:text-white"
+            onClick={(e) => handleNavClick(e, 2)}
+          >
             Projects
           </a>
-          <a href="#contact" className="hover:text-primary transition-colors">
+          <a 
+            href="#contact" 
+            className="text-lg hover:text-primary transition-colors dark:text-white"
+            onClick={(e) => handleNavClick(e, 3)}
+          >
             Contact
           </a>
         </div>

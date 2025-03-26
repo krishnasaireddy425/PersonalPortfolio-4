@@ -2,15 +2,27 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import BaffleText from "./BaffleText";
 import TypewriterEffect from "./TypewriterEffect";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  scrollToSection?: (index: number) => void;
+  isNight?: boolean;
+}
+
+export default function HeroSection({ scrollToSection, isNight = false }: HeroSectionProps) {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
 
   const roles = [
-    "I am a CS Student",
     "I am a Full Stack Developer",
+    "I am a CS Student",
     "I am a Software Engineer"
   ];
+
+  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionIndex: number) => {
+    if (isNight && scrollToSection) {
+      e.preventDefault();
+      scrollToSection(sectionIndex);
+    }
+  };
 
   return (
     <section className="min-h-screen relative overflow-hidden">
@@ -33,6 +45,7 @@ export default function HeroSection() {
               className="text-2xl md:text-3xl text-muted-foreground mb-8 block dark:text-white dark:drop-shadow-md"
             />
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -41,6 +54,7 @@ export default function HeroSection() {
           >
             <motion.a
               href="#projects"
+              onClick={(e) => handleButtonClick(e, 2)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-primary text-primary-foreground px-6 py-3 rounded-md transition-colors 
@@ -50,6 +64,7 @@ export default function HeroSection() {
             </motion.a>
             <motion.a
               href="#contact"
+              onClick={(e) => handleButtonClick(e, 3)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border border-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors 
