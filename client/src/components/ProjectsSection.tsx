@@ -14,26 +14,26 @@ import {
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with real-time inventory management",
-    technologies: ["React", "Node.js", "PostgreSQL"],
+    title: "Optimizing Stock Portfolio Returns with Big Data and ML",
+    description: "Developed a machine learning-based stock optimization framework leveraging XGBoost and PySpark to analyze 20 years of Nasdaq data. Implemented weighted ensemble modeling for predictive accuracy and designed an automated trading strategy. Achieved an estimated annual profit increase from 5% to 10%, demonstrating the effectiveness of AI in financial forecasting.",
+    technologies: ["Python", "XGBoost", "PySpark"],
     image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800",
     link: "https://example.com/project1"
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management with real-time updates",
-    technologies: ["TypeScript", "Express", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800",
-    link: "https://example.com/project2"
-  },
-  {
-    title: "Portfolio Generator",
-    description: "Dynamic portfolio website generator with customizable themes",
-    technologies: ["React", "Tailwind CSS", "Firebase"],
+    title: "Skin Lesion Classifier",
+    description: "In this project, I developed a deep learning model to detect skin cancer using CNN and transfer learning. The model achieved an accuracy of 85% in identifying seven classes of skin diseases. It was trained on the HAM10000 dataset using the TensorFlow framework for designing, training, and evaluating the model.",
+    technologies: ["TensorFlow", "CNN", "Transfer Learning"],
     image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800",
     link: "https://example.com/project3"
-  }
+  },
+  {
+    title: "Personal Portfolio",
+    description: "A sleek and modern portfolio website that elegantly showcases my skills, projects, and professional journey. Built with a minimalist design and intuitive navigation, the site features smooth animations and a responsive layout that adapts flawlessly across devices. Each section is carefully crafted to highlight my expertise and creativity, offering visitors a compelling and immersive browsing experience.",
+    technologies: ["React", "Tailwind CSS", "Firebase"],
+    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800",
+    link: "https://krishnasaireddy425.github.io/PersonalPortfolio-4/"
+  }  
 ];
 
 export default function ProjectsSection() {

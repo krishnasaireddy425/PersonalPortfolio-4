@@ -5,19 +5,19 @@ import { useRef } from "react";
 const skillCards = [
   {
     title: "Frontend",
-    skills: "React, TypeScript, Tailwind",
+    skills: "React, TypeScript, Javascript, CSS, React, XML",
   },
   {
     title: "Backend",
-    skills: "Node.js, Express, PostgreSQL",
+    skills: "Spring Boot, PostgreSQL,  Spring Boot, REST , SOAP",
   },
   {
-    title: "Tools",
-    skills: "Git, Docker, AWS",
+    title: "DevOps, Tools & Infrastructure",
+    skills: "Git, Docker, AWS, Docker, Jenkins, GIT, JIRA, Postgres, AWS, Apache Kafka",
   },
   {
-    title: "Design",
-    skills: "Figma, Adobe XD",
+    title: "Programming",
+    skills: "Java, Python, C, C++, SQL, JavaScript",
   },
 ];
 
@@ -66,13 +66,12 @@ export default function AboutSection() {
           <motion.div variants={itemVariants}>
             <p className="text-lg text-muted-foreground mb-4 dark:text-white">
               I'm a passionate full-stack developer with expertise in modern web technologies.
-              With a focus on creating elegant and efficient solutions, I bring ideas to life
-              through clean code and intuitive user experiences.
+              Over the past few years, I’ve built scalable web applications and backend services using technologies like Java, Spring Boot, and REST APIs—focusing on performance, security, and maintainability.
             </p>
             <p className="text-lg text-muted-foreground dark:text-white">
-              My journey in software development has led me to work with various technologies
-              including React, Node.js, and cloud platforms. I'm always excited to take on
-              new challenges and create meaningful applications.
+              On the frontend, I work with React to craft responsive interfaces, and I often bring everything 
+              together using tools like Docker, AWS, and Git. I’ve also built internal platforms with real-time analytics, automated support features using AI integrations, and dashboards for monitoring system performance with Grafana and Kibana. 
+              Earlier on, I contributed to healthcare applications by building reliable test automation frameworks. I'm always curious, always learning, and passionate about building systems that solve real-world problems.
             </p>
           </motion.div>
 
