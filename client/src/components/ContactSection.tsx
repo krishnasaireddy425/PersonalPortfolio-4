@@ -8,10 +8,10 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function ContactSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-10">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -19,8 +19,8 @@ export default function ContactSection() {
         transition={{ duration: 0.6 }}
         className="container mx-auto max-w-2xl"
       >
-        <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-        <div className="relative">
+        <h2 className="text-2xl font-bold mb-12">Get in Touch</h2>
+        <div className="relative -mt-10">
           {/* Moved opaque background inside the Card */}
           <Card className="relative rounded-lg overflow-hidden bg-primary/5 dark:bg-white">
             {/* Opaque layer only in light mode */}

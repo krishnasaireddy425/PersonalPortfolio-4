@@ -5,6 +5,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import NightModeBackground from "@/components/NightModeBackground";
+import Footer from "@/components/Footer";
 
 interface HomeProps {
   isNight: boolean;
@@ -37,6 +38,7 @@ export default function Home({ isNight, toggleDayNight }: HomeProps) {
             <AboutSection />
             <ProjectsSection />
             <ContactSection />
+            <Footer isNight={isNight} />
           </main>
         )}
       </div>
