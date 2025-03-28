@@ -13,7 +13,7 @@ const skillCards = [
   },
   {
     title: "DevOps, Tools & Infrastructure",
-    skills: "Git, Docker, AWS, Docker, Jenkins, GIT, JIRA, Postgres, AWS, Apache Kafka",
+    skills: "Docker, Jenkins, AWS, GIT, JIRA, Apache Kafka",
   },
   {
     title: "Programming",
@@ -69,9 +69,7 @@ export default function AboutSection() {
               Over the past few years, I’ve built scalable web applications and backend services using technologies like Java, Spring Boot, and REST APIs—focusing on performance, security, and maintainability.
             </p>
             <p className="text-lg text-muted-foreground dark:text-white">
-              On the frontend, I work with React to craft responsive interfaces, and I often bring everything 
-              together using tools like Docker, AWS, and Git. I’ve also built internal platforms with real-time analytics, automated support features using AI integrations, and dashboards for monitoring system performance with Grafana and Kibana. 
-              Earlier on, I contributed to healthcare applications by building reliable test automation frameworks. I'm always curious, always learning, and passionate about building systems that solve real-world problems.
+            I build responsive interfaces with React and tie things together using tools like Docker, AWS, and Git. I’ve worked on platforms with real-time analytics, AI-powered support, and performance dashboards. I’m always learning and love creating systems that make a real impact.
             </p>
           </motion.div>
 

@@ -17,13 +17,13 @@ export default function ProjectCard({
   technologies,
   image,
   link,
-  details = "Detailed information about this project will be added soon.",
+  details,
 }: ProjectCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <motion.div
-      className="relative h-[400px] perspective-1000"
+      className="relative h-[480px] perspective-1000"
       onClick={() => setIsFlipped(!isFlipped)}
       whileHover={{ y: -5 }}
       transition={{ type: "spring", stiffness: 300 }}
@@ -37,7 +37,11 @@ export default function ProjectCard({
         <div className="absolute w-full h-full backface-hidden">
           <Card className="h-full overflow-hidden dark:bg-[#F8F8F5]">
             <CardHeader className="p-0">
-              <img src={image} alt={title} className="w-full h-48 object-cover" />
+              <img 
+                src={image} 
+                alt={title} 
+                className="w-full h-[15.84rem] object-cover"
+              />
             </CardHeader>
             <CardContent className="p-6">
               <CardTitle className="mb-2 dark:text-black">{title}</CardTitle>
