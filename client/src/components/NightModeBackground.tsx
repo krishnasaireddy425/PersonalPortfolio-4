@@ -73,7 +73,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
         {/* About Section background */}
         <ParallaxLayer offset={1} speed={0} factor={1} style={{ backgroundColor: '#805E73' }} />
         {/* Projects Section background */}
-        <ParallaxLayer offset={2} speed={0} factor={1} style={{ backgroundColor: '#D8D8D0' }} />
+        <ParallaxLayer offset={2} speed={0} factor={1} style={{ backgroundColor: '#D9D9D9 ' }} />
         {/* Contact Section background */}
         <ParallaxLayer offset={3} speed={0} factor={1} style={{ backgroundColor: '#87BCDE' }} />
       

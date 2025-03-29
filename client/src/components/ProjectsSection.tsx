@@ -50,7 +50,7 @@ export default function ProjectsSection() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-bold mb-12">Featured Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 dark:text-[#3B3B3B]">Featured Projects</h2>
         
         {isMobile ? (
           // Mobile carousel view
