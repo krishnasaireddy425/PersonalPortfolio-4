@@ -194,7 +194,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
           }}
         >
           <div className="container mx-auto px-4 min-h-screen flex flex-col justify-center">
-            <AboutSection />
+            <AboutSection isNight={true} />
           </div>
         </ParallaxLayer>
 

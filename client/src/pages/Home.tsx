@@ -35,7 +35,7 @@ export default function Home({ isNight, toggleDayNight }: HomeProps) {
         {!isNight && (
           <main className="container mx-auto px-4 relative">
             <HeroSection isNight={isNight} />
-            <AboutSection />
+            <AboutSection isNight={isNight} />
             <ProjectsSection />
             <ContactSection />
             <Footer isNight={isNight} />
