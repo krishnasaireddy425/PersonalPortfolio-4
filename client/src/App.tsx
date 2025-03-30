@@ -10,7 +10,7 @@ import React, { useState } from "react";
 const base = import.meta.env.DEV ? "/" : "/PersonalPortfolio-4";
 
 function App() {
-  const [isNight, setIsNight] = useState(false);
+  const [isNight, setIsNight] = useState(true);
   const toggleDayNight = () => setIsNight(prev => !prev);
 
   return (

@@ -37,7 +37,7 @@ export default function Home({ isNight, toggleDayNight }: HomeProps) {
             <HeroSection isNight={isNight} />
             <AboutSection isNight={isNight} />
             <ProjectsSection />
-            <ContactSection />
+            <ContactSection isNight={isNight} />
             <Footer isNight={isNight} />
           </main>
         )}
