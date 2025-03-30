@@ -31,6 +31,8 @@ export default function AboutSection({ isNight = false }: AboutSectionProps) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isMobile, setIsMobile] = useState(false);
   const controls = useAnimationControls();
+  const [touchedCard, setTouchedCard] = useState<string | null>(null);
+  const currentXPosition = useRef(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,9 +50,9 @@ export default function AboutSection({ isNight = false }: AboutSectionProps) {
   useEffect(() => {
     if (isMobile && isNight) {
       controls.start({
-        x: [-2000, 0],
+        x: [0, -2000],
         transition: {
-          duration: 20,
+          duration: 50,
           repeat: Infinity,
           ease: "linear",
           repeatType: "loop"
@@ -110,8 +112,8 @@ export default function AboutSection({ isNight = false }: AboutSectionProps) {
           </motion.div>
 
           {isMobile && isNight ? (
-            <div className="relative w-full h-[200px] overflow-hidden touch-pan-x">
-              <div className="absolute w-full h-full">
+            <div className="relative w-full h-[260px] overflow-hidden touch-pan-x">
+              <div className="absolute w-full h-full pt-[20px]">
                 <motion.div 
                   className="flex gap-4 absolute left-0"
                   animate={controls}
@@ -119,26 +121,36 @@ export default function AboutSection({ isNight = false }: AboutSectionProps) {
                   onHoverStart={() => controls.stop()}
                   onHoverEnd={() => {
                     controls.start({
-                      x: [-2000, 0],
+                      x: [0, -2000],
                       transition: {
-                        duration: 30,
+                        duration: 50,
                         repeat: Infinity,
                         ease: "linear",
                         repeatType: "loop"
                       }
                     });
                   }}
-                  onTouchStart={() => controls.stop()}
+                  onTouchStart={(e) => {
+                    controls.stop();
+                    // Get the current transform value
+                    const element = e.currentTarget;
+                    const transform = window.getComputedStyle(element).transform;
+                    const matrix = new WebKitCSSMatrix(transform);
+                    currentXPosition.current = matrix.m41;
+                  }}
                   onTouchEnd={() => {
-                    controls.start({
-                      x: [-2000, 0],
-                      transition: {
-                        duration: 30,
-                        repeat: Infinity,
-                        ease: "linear",
-                        repeatType: "loop"
-                      }
-                    });
+                    setTimeout(() => {
+                      // Start from the current position and continue moving left
+                      controls.start({
+                        x: [currentXPosition.current, currentXPosition.current - 2000],
+                        transition: {
+                          duration: 50,
+                          repeat: Infinity,
+                          ease: "linear",
+                          repeatType: "loop"
+                        }
+                      });
+                    }, 2000);
                   }}
                 >
                   {[...Array(4)].map((_, i) => (
@@ -146,7 +158,12 @@ export default function AboutSection({ isNight = false }: AboutSectionProps) {
                       {skillCards.map((card) => (
                         <motion.div
                           key={`${i}-${card.title}`}
-                          className="min-w-[175px] h-[180px] bg-muted dark:bg-[#D9C0C0] p-4 rounded-lg shadow-lg flex flex-col justify-center"
+                          className="w-[170px] bg-muted dark:bg-[#D9C0C0] p-4 rounded-lg shadow-lg flex flex-col justify-center"
+                          initial={{ scale: 1, y: 0 }}
+                          animate={{ 
+                            scale: touchedCard === `${i}-${card.title}` ? 1.1 : 1,
+                            y: touchedCard === `${i}-${card.title}` ? -10 : 0
+                          }}
                           whileHover={{ 
                             scale: 1.1,
                             y: -10,
@@ -156,17 +173,21 @@ export default function AboutSection({ isNight = false }: AboutSectionProps) {
                               damping: 15
                             }
                           }}
-                          whileTap={{ 
-                            scale: 1.1,
-                            y: -10,
-                            transition: {
-                              type: "spring",
-                              stiffness: 300,
-                              damping: 15
-                            }
+                          onTouchStart={() => {
+                            setTouchedCard(`${i}-${card.title}`);
+                          }}
+                          onTouchEnd={() => {
+                            setTimeout(() => {
+                              setTouchedCard(null);
+                            }, 2000);
+                          }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15
                           }}
                         >
-                          <h3 className="text-lg font-bold mb-4 dark:text-black text-center">{card.title}</h3>
+                          <h3 className="font-bold mb-2 dark:text-black text-center">{card.title}</h3>
                           <p className="text-muted-foreground dark:text-black text-center">{card.skills}</p>
                         </motion.div>
                       ))}
