@@ -17,7 +17,7 @@ const projects = [
     title: "Optimizing Stock Portfolio Returns with Big Data and ML",
     details: "Developed a machine learning-based stock optimization framework leveraging XGBoost and PySpark to analyze 20 years of Nasdaq data. Implemented weighted ensemble modeling for predictive accuracy and designed an automated trading strategy. Achieved an estimated annual profit increase from 5% to 10%, demonstrating the effectiveness of AI in financial forecasting.",
     technologies: ["Python", "XGBoost", "PySpark"],
-    image: "/assets/img2.png",
+    image: "./assets/img2.png",
     link: "https://example.com/project1"
   },
   {
