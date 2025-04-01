@@ -135,7 +135,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} alt="cloud" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.8} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={0.2} speed={0.8} style={{ opacity: 0.1 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} alt="cloud" />
         </ParallaxLayer>
@@ -143,7 +143,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} alt="cloud" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 0.2 }}>
+        <ParallaxLayer offset={0.1} speed={0.2} style={{ opacity: 0.2 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} alt="cloud" />
         </ParallaxLayer>
