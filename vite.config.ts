@@ -33,5 +33,5 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
-  "base": "/PersonalPortfolio-4",
+  base: process.env.NODE_ENV === 'production' ? '/PersonalPortfolio-4' : '/',
 });
