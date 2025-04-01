@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 // Helper function to build image URLs.
 // When `wrap` is true, the URL is wrapped in CSS's url() syntax (useful for background images).
 const url = (name: string, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
+  `${wrap ? 'url(' : ''}/assets/${name}.svg${wrap ? ')' : ''}`;
 
 export default function NightModeBackground({ toggleDayNight }: { toggleDayNight: () => void }) {
   // Create a reference for the Parallax component so we can control scrolling.
@@ -127,7 +127,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
           <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} alt="cloud" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.75} speed={0.5} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={2.75} speed={0.5} style={{ opacity: 0.2 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} alt="cloud" />
         </ParallaxLayer>
@@ -151,6 +151,15 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} alt="cloud" />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} alt="cloud" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={3.3} speed={0.5} style={{ opacity: 0.2 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} alt="cloud" />
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} alt="cloud" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={3.2} speed={0.2} style={{ opacity: 0.4 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} alt="cloud" />
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '35%' }} alt="cloud" />
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '10%' }} alt="cloud" />
         </ParallaxLayer>
         <ParallaxLayer
           offset={3.4}
