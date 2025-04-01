@@ -10,8 +10,10 @@ import { motion } from 'framer-motion';
 
 // Helper function to build image URLs.
 // When `wrap` is true, the URL is wrapped in CSS's url() syntax (useful for background images).
-const url = (name: string, wrap = false) =>
-  `${wrap ? 'url(' : ''}/assets/${name}.svg${wrap ? ')' : ''}`;
+const url = (name: string, wrap = false) => {
+  const basePath = process.env.NODE_ENV === 'production' ? '/PersonalPortfolio-4' : '';
+  return `${wrap ? 'url(' : ''}${basePath}/assets/${name}.svg${wrap ? ')' : ''}`;
+};
 
 export default function NightModeBackground({ toggleDayNight }: { toggleDayNight: () => void }) {
   // Create a reference for the Parallax component so we can control scrolling.
