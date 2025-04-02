@@ -259,7 +259,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
               <div className="flex justify-center gap-8 mb-4">
                 {/* GitHub */}
                 <motion.a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/krishnasaireddy425" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-black hover:text-[#253237] transition-all duration-300"
@@ -274,7 +274,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
                 
                 {/* LinkedIn */}
                 <motion.a 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="https://www.linkedin.com/in/krishnasaireddy425/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-black hover:text-[#253237] transition-all duration-300"
@@ -291,7 +291,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
                 
                 {/* Email */}
                 <motion.a 
-                  href="mailto:your.email@example.com" 
+                  href="mailto:krishnasaireddy425@gmail.com" 
                   className="text-black hover:text-[#253237] transition-all duration-300"
                   whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.95 }}
