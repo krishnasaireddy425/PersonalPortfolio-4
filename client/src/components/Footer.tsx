@@ -37,10 +37,10 @@ export default function Footer({ isNight = false }: FooterProps) {
         viewport={{ once: true, margin: "-50px" }}
       >
         <motion.div variants={itemVariants} className="flex justify-center gap-8 mb-6">
-          <a 
-            href="https://github.com/yourusername" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            <a 
+              href="https://github.com/krishnasaireddy425" 
+              target="_blank" 
+              rel="noopener noreferrer"
             className={`transition-all duration-300 transform hover:scale-110 ${
               isNight 
                 ? 'text-white hover:text-[#D8D8D0]' 
@@ -53,7 +53,7 @@ export default function Footer({ isNight = false }: FooterProps) {
             </svg>
           </a>
           <a 
-            href="https://linkedin.com/in/yourusername" 
+            href="https://www.linkedin.com/in/krishnasaireddy425/" 
             target="_blank" 
             rel="noopener noreferrer"
             className={`transition-all duration-300 transform hover:scale-110 ${
@@ -70,7 +70,7 @@ export default function Footer({ isNight = false }: FooterProps) {
             </svg>
           </a>
           <a 
-            href="mailto:your.email@example.com" 
+            href="mailto:krishnasaireddy425@gmail.com" 
             className={`transition-all duration-300 transform hover:scale-110 ${
               isNight 
                 ? 'text-white hover:text-[#D8D8D0]' 

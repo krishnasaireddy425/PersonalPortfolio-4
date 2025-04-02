@@ -24,14 +24,14 @@ const projects = [
     title: "Skin Lesion Classifier",
     details: "In this project, I developed a deep learning model to detect skin cancer using CNN and transfer learning. The model achieved an accuracy of 85% in identifying seven classes of skin diseases. It was trained on the HAM10000 dataset using the TensorFlow framework for designing, training, and evaluating the model.",
     technologies: ["TensorFlow", "CNN", "Transfer Learning"],
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800",
+    image: "./assets/img1.png",
     link: "https://example.com/project3"
   },
   {
     title: "Personal Portfolio",
     details: "A sleek and modern portfolio website that elegantly showcases my skills, projects, and professional journey. Built with a minimalist design and intuitive navigation, the site features smooth animations and a responsive layout that adapts flawlessly across devices. Each section is carefully crafted to highlight my expertise and creativity, offering visitors a compelling and immersive browsing experience.",
     technologies: ["React", "Tailwind CSS", "Firebase"],
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800",
+    image: "./assets/img3.jpg",
     link: "https://krishnasaireddy425.github.io/PersonalPortfolio-4/"
   }  
 ];
