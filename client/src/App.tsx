@@ -6,8 +6,8 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import React, { useState } from "react";
 
-// Use "/" during development and "/PersonalPortfolio-4" in production
-const base = import.meta.env.DEV ? "/" : "/PersonalPortfolio-4";
+// Use "/" for both development and production with custom domain
+const base = "/";
 
 function App() {
   const [isNight, setIsNight] = useState(true);
@@ -16,7 +16,6 @@ function App() {
   return (
     <div className={isNight ? "dark" : ""}>
       <QueryClientProvider client={queryClient}>
-        {/* Conditional base path */}
         <Router base={base}>
           <Switch>
             <Route path="/" component={() => <Home isNight={isNight} toggleDayNight={toggleDayNight} />} />
