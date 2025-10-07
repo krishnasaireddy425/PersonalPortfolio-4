@@ -18,21 +18,28 @@ const projects = [
     details: "Developed a machine learning-based stock optimization framework leveraging XGBoost and PySpark to analyze 20 years of Nasdaq data. Implemented weighted ensemble modeling for predictive accuracy and designed an automated trading strategy. Achieved an estimated annual profit increase from 5% to 10%, demonstrating the effectiveness of AI in financial forecasting.",
     technologies: ["Python", "XGBoost", "PySpark"],
     image: "./assets/img2.png",
-    link: "https://example.com/project1"
+    link: "https://medium.com/@krishnasaireddy275/optimizing-stock-portfolio-returns-using-big-data-and-machine-learning-07f6533060bd"
   },
   {
-    title: "Skin Lesion Classifier",
-    details: "In this project, I developed a deep learning model to detect skin cancer using CNN and transfer learning. The model achieved an accuracy of 85% in identifying seven classes of skin diseases. It was trained on the HAM10000 dataset using the TensorFlow framework for designing, training, and evaluating the model.",
-    technologies: ["TensorFlow", "CNN", "Transfer Learning"],
+    title: "Spatial Regionalization using Reinforcement Learning (DQN)",
+    details: "This project explores spatial regionalization using Deep Q-Networks, addressing the p-regions problem. By applying reinforcement learning, it dynamically optimizes spatial clustering, surpassing traditional methods like Region2Vec in adaptability, efficiency, and producing balanced, homogeneous regional partitions.",
+    technologies: ["TensorFlow / Keras", "Python", "Scikit-learn"],
+    image: "./assets/img4.png",
+    link: "https://medium.com/@krishnasaireddy275/spatial-regionalization-using-reinforcement-learning-dqn-25795353d28b"
+  },
+  {
+    title: "AI-Powered Restaurant Review Q&A System (RAG Architecture)",
+    details: "Developed a real-time Q&A system using RAG architecture with Python, LangChain, and LLMs (Ollama/Llama3). Ingested and embedded restaurant reviews using ChromaDB for semantic search. Implemented custom retrievers to surface relevant feedback, enabling context-aware, expert responses to user queries based on actual customer experiences at a pizza restaurant.",
+    technologies: ["LangChain", "ChromaDB", "LLaMA 3"],
     image: "./assets/img1.png",
-    link: "https://example.com/project3"
+    link: "https://github.com/krishnasaireddy425/AI_Agent"
   },
   {
-    title: "Personal Portfolio",
-    details: "A sleek and modern portfolio website that elegantly showcases my skills, projects, and professional journey. Built with a minimalist design and intuitive navigation, the site features smooth animations and a responsive layout that adapts flawlessly across devices. Each section is carefully crafted to highlight my expertise and creativity, offering visitors a compelling and immersive browsing experience.",
-    technologies: ["React", "Tailwind CSS", "Firebase"],
-    image: "./assets/img3.jpg",
-    link: "https://krishnasaireddy425.github.io/PersonalPortfolio-4/"
+    title: "Spatial Regionalization using Reinforcement Learning (DQN)",
+    details: "This project explores spatial regionalization using Deep Q-Networks, addressing the p-regions problem. By applying reinforcement learning, it dynamically optimizes spatial clustering, surpassing traditional methods like Region2Vec in adaptability, efficiency, and producing balanced, homogeneous regional partitions.",
+    technologies: ["TensorFlow / Keras", "Python", "Scikit-learn"],
+    image: "./assets/img4.png",
+    link: "https://medium.com/@krishnasaireddy275/spatial-regionalization-using-reinforcement-learning-dqn-25795353d28b"
   }  
 ];
 
