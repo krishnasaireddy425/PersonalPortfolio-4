@@ -21,11 +21,11 @@ const projects = [
     link: "https://medium.com/@krishnasaireddy275/optimizing-stock-portfolio-returns-using-big-data-and-machine-learning-07f6533060bd"
   },
   {
-    title: "Spatial Regionalization using Reinforcement Learning (DQN)",
-    details: "This project explores spatial regionalization using Deep Q-Networks, addressing the p-regions problem. By applying reinforcement learning, it dynamically optimizes spatial clustering, surpassing traditional methods like Region2Vec in adaptability, efficiency, and producing balanced, homogeneous regional partitions.",
-    technologies: ["TensorFlow / Keras", "Python", "Scikit-learn"],
+    title: "Prefetch AI: Autonomous Workflow Orchestration with Intelligent Agents",
+    details: "Prefetch AI is an intelligent workflow orchestration platform that combines automation, reasoning, and AI agents. Built with Next.js and Supabase, it enables users to design adaptive workflows and create AI agents that connect multiple tools, execute complex tasks, and make contextual decisions on triggers or scheduled intervals autonomously.",
+    technologies: ["Next.js", "React", "Node.js", "Supabase"],
     image: "./assets/img4.png",
-    link: "https://medium.com/@krishnasaireddy275/spatial-regionalization-using-reinforcement-learning-dqn-25795353d28b"
+    link: "https://medium.com/@krishnasaireddy275/prefetch-ai-building-the-future-of-intelligent-workflow-orchestration-bb8d3b3e25f4"
   },
   {
     title: "AI-Powered Restaurant Review Q&A System (RAG Architecture)",
