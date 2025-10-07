@@ -21,10 +21,10 @@ const projects = [
     link: "https://medium.com/@krishnasaireddy275/optimizing-stock-portfolio-returns-using-big-data-and-machine-learning-07f6533060bd"
   },
   {
-    title: "Prefetch AI: Autonomous Workflow Orchestration with Intelligent Agents",
-    details: "Prefetch AI is an intelligent workflow orchestration platform that combines automation, reasoning, and AI agents. Built with Next.js and Supabase, it enables users to design adaptive workflows and create AI agents that connect multiple tools, execute complex tasks, and make contextual decisions on triggers or scheduled intervals autonomously.",
+    title: "Torvi AI: Autonomous Workflow Orchestration with Intelligent Agents",
+    details: "Torvi AI is an intelligent workflow orchestration platform that combines automation, reasoning, and AI agents. Built with Next.js and Supabase, it enables users to design adaptive workflows and create AI agents that connect multiple tools, execute complex tasks, and make contextual decisions on triggers or scheduled intervals autonomously.",
     technologies: ["Next.js", "React", "Node.js", "Supabase"],
-    image: "./assets/img4.png",
+    image: "./assets/torvi.png",
     link: "https://medium.com/@krishnasaireddy275/prefetch-ai-building-the-future-of-intelligent-workflow-orchestration-bb8d3b3e25f4"
   },
   {
