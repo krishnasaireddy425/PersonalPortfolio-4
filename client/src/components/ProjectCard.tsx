@@ -89,7 +89,7 @@ export default function ProjectCard({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2C2C2C] text-[#8C8C8C] px-4 py-2 rounded text-center mt-4 hover:bg-[#404040] transition-all duration-300 font-medium"
+                className="bg-[#2C2C2C] text-white px-4 py-2 rounded text-center mt-4 hover:bg-[#404040] transition-all duration-300 font-medium"
                 onClick={(e) => e.stopPropagation()}
               >
                 View Project
