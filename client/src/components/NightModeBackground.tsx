@@ -274,7 +274,7 @@ export default function NightModeBackground({ toggleDayNight }: { toggleDayNight
                 
                 {/* LinkedIn */}
                 <motion.a 
-                  href="https://www.linkedin.com/in/krishnasai-reddy-992292384/" 
+                  href="https://www.linkedin.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-black hover:text-[#253237] transition-all duration-300"

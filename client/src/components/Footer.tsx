@@ -53,7 +53,7 @@ export default function Footer({ isNight = false }: FooterProps) {
             </svg>
           </a>
           <a 
-            href="https://www.linkedin.com/in/krishnasai-reddy-992292384/" 
+            href="https://www.linkedin.com/" 
             target="_blank" 
             rel="noopener noreferrer"
             className={`transition-all duration-300 transform hover:scale-110 ${
